@@ -40,7 +40,7 @@ wss.on('connection', function connection(ws, req) {
 	clientIds++;
 
 //	CLIENTS.push(ws);
-	console.log("Someone connected, assigning id: " + ws.id);
+  console.log(ws._socket.remoteAddress + " just connected (" + ws.id + ")");
 
 	ws.on('message', function incoming(message) {
 		console.log('Received message from ' + ws.id + ': ' + message);
