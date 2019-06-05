@@ -43,7 +43,7 @@ wss.on('connection', function connection(ws, req) {
   console.log(ws._socket.remoteAddress + " just connected (" + ws.id + ")");
 
 	ws.on('message', function incoming(message) {
-		console.log('Received message from ' + ws.id + ': ' + message);
+		console.log('Received message from ' + ws.id);
 	    //var msg = JSON.parse(message);
         // Broadcast message to everyone
         wss.clients.forEach(function each(client) {
