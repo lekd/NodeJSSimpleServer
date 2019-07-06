@@ -12,9 +12,9 @@ var WebSocketServer   = WebSocket.Server;
 var webServerPort = 8080; // Web server (http) listens on this port
 
 app.set('port', process.env.PORT || webServerPort);
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(path.join(__dirname, 'views')));
+//app.use(express.static(path.join(__dirname, 'views')));
 
 server.listen(app.get('port'),function() {
     console.log("Web Server listening port " + app.get('port'));
@@ -31,9 +31,9 @@ clientIds = 0;
 
 /*----------- WS Server -----------*/
 
-// const wss = new WebSocket.Server({ port: webSocketServerPort },function(){
-//   console.log("WS Server listenting on " + webSocketServerPort);
-// });
+//const wss = new WebSocket.Server({ port: webServerPort },function(){
+//  console.log("WS Server listenting on " + webServerPort);
+//});
 
 wss.on('connection', function connection(ws, req) {
 	ws.id = clientIds;
