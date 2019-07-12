@@ -14,10 +14,10 @@ var webServerPort = 8080; // Web server (http) listens on this port
 app.set('port', process.env.PORT || webServerPort);
 //app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 server.listen(app.get('port'),function() {
-    console.log("Web Server listening port " + app.get('port'));
+    console.log("Web Server listening at port " + app.get('port'));
 });
 
 // Web socket server
